@@ -1,0 +1,54 @@
+
+<!DOCTYPE html> <html> 
+<script> 
+  var a = "sitting";
+  var b = "gettin";
+  
+ function lev(s1, s1l, s2, s2l) {
+  var cost = 0;
+   if (s1l == 0) {return s2l;}
+   if (s2l == 0) {return s1l;}
+   if (s1[s1l - 1]==s2[s2l - 1]) {cost = 0;}
+   else {cost = 1;}
+ return Math.min(lev(s1, s1l-1, s2, s2l)+1, lev(s1, s1l, s2, s2l - 1)+1, lev(s1, s1l-1, s2, s2l -1)+cost);
+}
+//alert(lev (a, a.length, b, b.length));
+
+
+
+var alph = {
+q:[1,1],
+w:[3,1],
+e:[5,1],
+r:[7,1],
+t:[9,1],
+y:[11,1],
+u:[13,1],
+i:[15,1],
+o:[17,1],
+p:[19,1],
+a:[2,2],
+s:[4,2],
+d:[6,2],
+f:[8,2],
+g:[10,2],
+h:[12,2],
+j:[14,2],
+k:[16,2],
+l:[18,2],
+z:[3,3],
+x:[5,3],
+c:[7,3],
+v:[9,3],
+b:[11,3],
+n:[13,3],
+m:[15,3]
+};
+function r(q,t)
+{
+return eval("Math.sqrt((alph."+q+"[0]-alph."+t+"[0])*(alph."+q+"[0]-alph."+t+"[0])+(alph."+q+"[1]-alph."+t+"[1])*(alph."+q+"[1]-alph."+t+"[1]));");
+}
+
+alert(r("q","a"));
+ </script>
+</html>
